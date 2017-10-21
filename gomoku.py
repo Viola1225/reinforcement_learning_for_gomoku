@@ -1,11 +1,14 @@
 import numpy as np
 
+
 class gomoku(object):
     def __init__(self):
         self.board = np.array([[0]*15]*15)
         self.winner = None
         self.turn = 1
-        
+
+
+    #the first player
     def first(self,pt):
         if self.winner == None and self.turn == 1:
             if self.board[pt[0],pt[1]]==0:
@@ -14,6 +17,7 @@ class gomoku(object):
         self.turn = -1
         print(self.board)
         
+    #the second player
     def second(self,pt):
         if self.winner == None and self.turn == -1:
             if self.board[pt[0],pt[1]]==0:
@@ -21,7 +25,8 @@ class gomoku(object):
             self.check(pt,-1)
         self.turn = 1
         print(self.board)
-        
+
+    #check if the current play wins
     def check(self,pt, sign):
         low = min(5,14-pt[0])
         up = min(pt[0],5)
