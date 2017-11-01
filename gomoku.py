@@ -1,6 +1,9 @@
 import numpy as np
 
-
+# game = gomoku()
+# game.first([i,j])
+#
+#
 class gomoku(object):
     def __init__(self):
         self.board = np.array([[0]*15]*15)
